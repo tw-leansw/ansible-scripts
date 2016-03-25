@@ -1,0 +1,11 @@
+---
+- name: add gocd yum repo to local
+  script: yum-repo-gocd.sh
+
+- yum: name=java-1.7.0-openjdk
+
+- yum: name=go-agent
+
+- lineinfile: dest=/etc/default/go-agent regexp=^GO_SERVER= line=GO_SERVER={{ go-server }}
+  notify:
+    - restart go agent
