@@ -1,0 +1,5 @@
+---
+- script: yum.repo.sh
+- yum: name=mongo20-10gen-server state=present
+- lineinfile: dest=/etc/selinux/config regexp=^SELINUX= line=SELINUX=disabled
+- service: name=mongod state=restarted enabled=yes
