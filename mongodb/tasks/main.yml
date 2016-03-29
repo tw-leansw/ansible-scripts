@@ -3,3 +3,4 @@
 - yum: name=mongo20-10gen-server state=present
 - lineinfile: dest=/etc/selinux/config regexp=^SELINUX= line=SELINUX=disabled
 - service: name=mongod state=restarted enabled=yes
+- file: path=/data/db/ mode=u+rw state=directory
