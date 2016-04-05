@@ -2,6 +2,6 @@
 - hosts: all
   remote_user: root
   roles:
-     - mysql
+     - docker
      - mongodb
-     - eureka-server
+     - mysql
