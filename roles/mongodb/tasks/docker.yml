@@ -4,4 +4,4 @@
     image: mongo
     state: started
     expose:
-      - 27017
+      - "27017:27017"

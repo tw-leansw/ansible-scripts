@@ -5,5 +5,7 @@
     state: present
     pull: always
     insecure_registry: yes
+    expose:
+      - "9900:80"
     links:
-      - - "eureka-server:eureka-server"
+      - "eureka-server:eureka-server"

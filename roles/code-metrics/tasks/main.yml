@@ -5,6 +5,8 @@
     state: present
     pull: always
     insecure_registry: yes
+    expose:
+      - "9003:9003"
     links:
       - "mongodb:mongo-server"
       - "eureka-server:eureka-server"
