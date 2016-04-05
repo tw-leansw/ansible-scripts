@@ -1,0 +1,7 @@
+---
+- docker:
+    name: mongodb
+    image: mongo
+    state: started
+    expose:
+      - 27017

@@ -1,0 +1,52 @@
+---
+- script: yum-repo-docker.sh
+  tags:
+    - docker
+- yum: name=docker-engine state=latest
+  tags:
+    - docker
+
+- name: Set docker daemon options
+  copy:
+    content: "DOCKER_OPTS=\"{{ docker_opts }}\""
+    dest: /etc/default/docker
+    owner: root
+    group: root
+    mode: 0644
+  when: docker_opts != ""
+  tags:
+    - docker
+
+- lineinfile:
+    dest: /lib/systemd/system/docker.service
+    insertafter: '^\[Service\]'
+    line: "EnvironmentFile=-/etc/default/docker"
+    state: present
+  register: docker_conf_updated_env1
+  tags:
+    - docker
+
+- lineinfile:
+    dest: /lib/systemd/system/docker.service
+    regexp: "^ExecStart"
+    line: "ExecStart=/usr/bin/docker daemon -H fd:// $DOCKER_OPTS"
+    state: present
+  register: docker_conf_updated_env2
+  tags:
+    - docker
+
+- name: Reload systemd immediately
+  command: systemctl daemon-reload
+  when: docker_conf_updated_env1.changed or docker_conf_updated_env2.changed
+  tags:
+    - docker
+
+- service: name=docker state=restarted
+  tags:
+    - docker
+- easy_install: name=pip
+  tags:
+    - docker
+- pip: name=docker-py version=1.1.0
+  tags:
+    - docker

@@ -1,0 +1,11 @@
+---
+- docker:
+    name: mysql
+    image: mysql:5.5
+    state: started
+    expose:
+      - 3306
+    env:
+      MYSQL_DATABASE: deliflow
+      MYSQL_USER: deliflow
+      MYSQL_PASSWORD: deliflow

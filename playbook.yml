@@ -5,3 +5,5 @@
      - docker
      - mongodb
      - mysql
+     - eureka-server
+     - identity-server

@@ -1,0 +1,11 @@
+---
+- docker:
+    name: eureka-server
+    image: registry:5000/leansw/discovery-service
+    state: started
+    pull: always
+    insecure_registry: yes
+    expose:
+      - 8761
+  tags:
+    - docker
