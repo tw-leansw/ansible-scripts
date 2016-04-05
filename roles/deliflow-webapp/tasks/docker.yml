@@ -1,0 +1,6 @@
+---
+- docker:
+    name: deliflow-webapp
+    image: registry:5000/leansw/deliflow-webapp
+    state: present
+    pull: always

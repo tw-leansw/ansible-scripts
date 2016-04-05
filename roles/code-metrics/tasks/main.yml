@@ -1,0 +1,9 @@
+---
+- docker:
+    name: code-metrics
+    image: registry:5000/leansw/code-metrics
+    state: present
+    pull: always
+    insecure_registry: yes
+  tags:
+    - docker

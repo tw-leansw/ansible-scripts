@@ -1,0 +1,9 @@
+---
+- docker:
+    name: cd-metrics
+    image: registry:5000/leansw/cd-metrics
+    state: present
+    pull: always
+    insecure_registry: yes
+  tags:
+    - docker
