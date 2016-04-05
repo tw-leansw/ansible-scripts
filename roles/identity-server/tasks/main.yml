@@ -1,23 +1,30 @@
 ---
+- shell: echo hello identity
+  tags:
+    - docker
 - docker:
     name: identity-server
     image: registry:5000/leansw/identity-services
-    state: started
+    state: reloaded
     pull: always
     insecure_registry: yes
+    ports:
+      - "2400:2400"
     links:
       - "mysql:mysql-server"
       - "eureka-server:eureka-server"
-    tags:
-      - docker
+  tags:
+    - docker
 
 - docker:
     name: auth-server
     image: registry:5000/leansw/auth-server
-    state: started
+    state: reloaded
     pull: always
+    ports:
+      - "8081:8080"
     links:
       - "eureka-server:eureka-server"
     insecure_registry: yes
-    tags:
-      - docker
+  tags:
+    - docker

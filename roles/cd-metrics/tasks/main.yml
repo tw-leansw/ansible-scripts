@@ -2,10 +2,10 @@
 - docker:
     name: cd-metrics
     image: registry:5000/leansw/cd-metrics
-    state: present
+    state: reloaded
     pull: always
     insecure_registry: yes
-    expose:
+    ports:
       - "9001:9001"
     links:
       - "mongodb:mongo-server"

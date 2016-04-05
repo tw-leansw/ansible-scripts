@@ -9,3 +9,4 @@
       MYSQL_DATABASE: deliflow
       MYSQL_USER: deliflow
       MYSQL_PASSWORD: deliflow
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes

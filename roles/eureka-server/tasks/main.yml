@@ -5,7 +5,7 @@
     state: started
     pull: always
     insecure_registry: yes
-    expose:
+    ports:
       - "8761:8761"
   tags:
     - docker

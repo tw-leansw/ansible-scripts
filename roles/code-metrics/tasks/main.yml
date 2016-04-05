@@ -2,10 +2,10 @@
 - docker:
     name: code-metrics
     image: registry:5000/leansw/code-metrics
-    state: present
+    state: reloaded
     pull: always
     insecure_registry: yes
-    expose:
+    ports:
       - "9003:9003"
     links:
       - "mongodb:mongo-server"

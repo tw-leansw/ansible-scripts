@@ -7,6 +7,6 @@
      - mysql
      - eureka-server
      - identity-server
-     - cd-metrics
-     - code-metrics
-     - deliflow-webapp
+    #  - cd-metrics
+    #  - code-metrics
+    #  - deliflow-webapp

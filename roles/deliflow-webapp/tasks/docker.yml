@@ -2,10 +2,10 @@
 - docker:
     name: deliflow-webapp
     image: registry:5000/leansw/deliflow-webapp
-    state: present
+    state: reloaded
     pull: always
     insecure_registry: yes
-    expose:
+    ports:
       - "9900:80"
     links:
       - "eureka-server:eureka-server"
