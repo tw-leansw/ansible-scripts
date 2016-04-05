@@ -1,0 +1,8 @@
+---
+- docker:
+    name: gocd-server
+    image: gocd/gocd-server
+    state: started
+    insecure_registry: yes
+    ports:
+      - "8153:8153"

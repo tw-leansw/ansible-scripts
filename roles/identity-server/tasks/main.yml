@@ -13,6 +13,7 @@
     links:
       - "mysql:mysql-server"
       - "eureka-server:eureka-server"
+      - "gocd-server:gocd-server"
   tags:
     - docker
 

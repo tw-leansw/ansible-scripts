@@ -5,6 +5,9 @@
      - docker
      - mongodb
      - mysql
+     - sonarqube
+     - gocd-server
+     - gocd-agent
      - eureka-server
      - identity-server
     #  - cd-metrics
