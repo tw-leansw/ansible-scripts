@@ -1,0 +1,3 @@
+---
+git: repo=git@github.com:twconsultants/leansw-support-service.git dest=/tmp/leansw-support-service-sources
+shell: mvn clean package chdir=/tmp/leansw-support-service-sources
