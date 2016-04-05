@@ -5,5 +5,8 @@
     state: present
     pull: always
     insecure_registry: yes
+    links:
+      - "mongodb:mongo-server"
+      - "eureka-server:eureka-server"
   tags:
     - docker
