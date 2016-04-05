@@ -6,6 +6,6 @@
     pull: always
     insecure_registry: yes
     expose:
-      - 8761
+      - "8761:8761"
   tags:
     - docker
