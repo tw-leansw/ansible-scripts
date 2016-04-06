@@ -10,6 +10,7 @@
      - gocd-agent
      - eureka-server
      - identity-server
+     - auth-server
      - cd-metrics
      - code-metrics
      - deliflow-webapp

@@ -17,17 +17,3 @@
   tags:
     - docker
     - identity
-
-- docker:
-    name: auth-server
-    image: registry:5000/leansw/auth-server
-    state: reloaded
-    pull: always
-    ports:
-      - "8081:8080"
-    links:
-      - "eureka-server:eureka-server"
-    insecure_registry: yes
-  tags:
-    - docker
-    - identity
