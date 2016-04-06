@@ -1,5 +1,6 @@
 ---
-- docker:
+- name: start gocd-agent-container
+  docker:
     name: gocd-agent
     image: gocd/gocd-agent
     state: started
@@ -8,4 +9,4 @@
     links:
       - "gocd-server:gocd-server"
     env:
-      - GO_SERVER:gocd-server
+      GO_SERVER: gocd-server
