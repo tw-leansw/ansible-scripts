@@ -1,9 +1,15 @@
 ---
 - name: create config volume mapping gocd config file
-  file: path=/go state=directory mode=0755
+  file: path=/data/var/go state=directory mode=0755
+
+- name: create config volume mapping gocd config file
+  file: path=/data/etc/go state=directory mode=0777
 
 - name: upload gocd password.properties
-  copy: src=password.properties dest=/go/password.properties mode=777
+  copy: src=password.properties dest=/data/var/go/password.properties mode=777
+
+- name: upload gocd cruise-config.xml
+  copy: src=cruise-config.xml dest=/data/etc/go/cruise-config.xml mode=777
 
 - name: start gocd-server container
   docker:
@@ -14,4 +20,5 @@
     ports:
       - "8153:8153"
     volumes:
-      - /go:/var/go
+      - /data/var/go:/var/go
+      - /data/etc/go:/etc/go
