@@ -1,9 +1,17 @@
 ---
+- name: create config volume mapping gocd config file
+  file: path=/go state=directory mode=0755
+
+- name: upload gocd password.properties
+  copy: src=password.properties dest=/go/password.properties mode=777
+
 - name: start gocd-server container
   docker:
     name: gocd-server
     image: gocd/gocd-server
-    state: started
+    state: reloaded
     insecure_registry: yes
     ports:
       - "8153:8153"
+    volumes:
+      - /go:/var/go

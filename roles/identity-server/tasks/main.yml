@@ -1,10 +1,8 @@
 ---
-- shell: echo hello identity
-  tags:
-    - docker
-- docker:
+- name: start identity-server container
+  docker:
     name: identity-server
-    image: registry:5000/leansw/identity-services
+    image: registry:5000/leansw/identity-services:release
     state: reloaded
     pull: always
     insecure_registry: yes
@@ -14,8 +12,11 @@
       - "mysql:mysql-server"
       - "eureka-server:eureka-server"
       - "gocd-server:gocd-server"
+    env:
+      ACTIVE_PROFILE: default
   tags:
     - docker
+    - identity
 
 - docker:
     name: auth-server
@@ -29,3 +30,4 @@
     insecure_registry: yes
   tags:
     - docker
+    - identity

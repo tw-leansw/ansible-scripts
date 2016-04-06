@@ -1,5 +1,6 @@
 ---
-- docker:
+- name: start eureka-server
+  docker:
     name: eureka-server
     image: registry:5000/leansw/discovery-service
     state: started
@@ -8,3 +9,4 @@
       - "8761:8761"
   tags:
     - docker
+    - identity

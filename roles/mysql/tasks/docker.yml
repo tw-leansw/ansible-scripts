@@ -6,7 +6,7 @@
     expose:
       - "3306:3306"
     env:
-      MYSQL_DATABASE: deliflow
+      MYSQL_DATABASE: deliflow-identity
       MYSQL_USER: deliflow
       MYSQL_PASSWORD: deliflow
       MYSQL_ALLOW_EMPTY_PASSWORD: yes
