@@ -9,3 +9,5 @@
       - "9900:80"
     links:
       - "eureka-server:eureka-server"
+    env:
+      ACTIVE_PROFILE: default

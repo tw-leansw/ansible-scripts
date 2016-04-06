@@ -11,5 +11,8 @@
       - "mongodb:mongo-server"
       - "eureka-server:eureka-server"
       - "sonarqube:sonar-server"
+    env:
+      ACTIVE_PROFILE: default
   tags:
     - docker
+    - code-metrics

@@ -1,2 +1,2 @@
 ---
-- include: docker.yml tags=docker
+- include: docker.yml tags=docker,deliflow-webapp
