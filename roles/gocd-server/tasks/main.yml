@@ -1,2 +1,2 @@
 ---
-- include: docker.yml tags=docker,identity,gocd
+- include: docker.yml tags=docker,identity,gocd,cd-metrics

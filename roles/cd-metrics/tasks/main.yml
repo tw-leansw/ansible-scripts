@@ -1,7 +1,7 @@
 ---
 - docker:
     name: cd-metrics
-    image: registry:5000/leansw/cd-metrics
+    image: registry:5000/leansw/cd-metrics:release
     state: reloaded
     pull: always
     insecure_registry: yes

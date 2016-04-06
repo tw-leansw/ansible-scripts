@@ -1,7 +1,7 @@
 ---
 - docker:
     name: code-metrics
-    image: registry:5000/leansw/code-metrics
+    image: registry:5000/leansw/code-metrics:release
     state: reloaded
     pull: always
     insecure_registry: yes
