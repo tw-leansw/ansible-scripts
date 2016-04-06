@@ -4,8 +4,6 @@
     name: gocd-agent
     image: gocd/gocd-agent
     state: started
-    ports:
-      - "8153:8153"
     links:
       - "gocd-server:gocd-server"
     env:

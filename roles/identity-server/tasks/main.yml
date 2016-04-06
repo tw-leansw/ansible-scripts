@@ -6,8 +6,8 @@
     state: reloaded
     pull: always
     insecure_registry: yes
-    ports:
-      - "2400:2400"
+    # ports:
+      # - "2400:2400"
     links:
       - "mysql:mysql-server"
       - "eureka-server:eureka-server"

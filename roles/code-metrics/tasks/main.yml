@@ -5,8 +5,8 @@
     state: reloaded
     pull: always
     insecure_registry: yes
-    ports:
-      - "9003:9003"
+    # ports:
+      # - "9003:9003"
     links:
       - "mongodb:mongo-server"
       - "eureka-server:eureka-server"
