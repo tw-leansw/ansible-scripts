@@ -11,3 +11,4 @@
     - docker
     - identity
     - cd-metrics
+    - code-metrics
