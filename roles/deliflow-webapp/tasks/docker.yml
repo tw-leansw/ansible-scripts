@@ -6,7 +6,7 @@
     pull: always
     insecure_registry: yes
     ports:
-      - "9900:80"
+      - "80:9900"
     links:
       - "eureka-server:eureka-server"
     env:
