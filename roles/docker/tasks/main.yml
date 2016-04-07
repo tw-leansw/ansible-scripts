@@ -38,12 +38,11 @@
 - name: Reload systemd immediately
   command: systemctl daemon-reload
   when: docker_conf_updated_env1.changed or docker_conf_updated_env2.changed
+  notify:
+    - restart docker engine
   tags:
     - docker
-
-- service: name=docker state=restarted
-  tags:
-    - docker
+    
 - easy_install: name=pip
   tags:
     - docker
