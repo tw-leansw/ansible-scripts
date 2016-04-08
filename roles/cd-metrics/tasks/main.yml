@@ -3,7 +3,7 @@
     name: cd-metrics
     image: registry:5000/leansw/cd-metrics:release
     state: reloaded
-    # pull: always
+    pull: always
     insecure_registry: yes
     ports:
       - "9001:9001"
