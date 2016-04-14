@@ -5,8 +5,7 @@
     state: reloaded
     pull: always
     insecure_registry: yes
-    # ports:
-      # - "9003:9003"
+    memory_limit: 512MB
     links:
       - "mongodb:mongo-server"
       - "eureka-server:eureka-server"

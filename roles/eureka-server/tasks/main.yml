@@ -5,6 +5,7 @@
     image: registry:5000/leansw/discovery-service
     state: reloaded
     insecure_registry: yes
+    memory_limit: 512MB
     ports:
       - "8761:8761"
   tags:

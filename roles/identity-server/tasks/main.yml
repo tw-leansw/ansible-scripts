@@ -2,18 +2,17 @@
 - name: start identity-server container
   docker:
     name: identity-server
-    image: registry:5000/leansw/identity-services:release
+    image: "{{ identity_docker_images }}"
     state: reloaded
     pull: always
+    memory_limit: 512MB
     insecure_registry: yes
-    # ports:
-      # - "2400:2400"
     links:
       - "mysql:mysql-server"
       - "eureka-server:eureka-server"
       - "gocd-server:gocd-server"
     env:
-      ACTIVE_PROFILE: default
+      ACTIVE_PROFILE: "{{ active_profile }}"
   tags:
     - docker
     - identity

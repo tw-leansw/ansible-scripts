@@ -4,6 +4,7 @@
     name: gocd-agent
     image: gocd/gocd-agent
     state: started
+    memory_limit: 512MB
     links:
       - "gocd-server:gocd-server"
     env:

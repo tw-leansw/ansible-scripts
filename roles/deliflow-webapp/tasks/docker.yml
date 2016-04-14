@@ -5,6 +5,7 @@
     state: reloaded
     pull: always
     insecure_registry: yes
+    memory_limit: 512MB
     ports:
       - "80:9900"
     links:
