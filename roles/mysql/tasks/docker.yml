@@ -3,8 +3,7 @@
     name: mysql
     image: mysql:5.5
     state: started
-    # expose:
-      # - "3306:3306"
+    memory_limit: 512MB
     env:
       MYSQL_DATABASE: deliflow-identity
       MYSQL_USER: deliflow

@@ -3,3 +3,4 @@
     name: mongodb
     image: mongo
     state: started
+    memory_limit: 512MB
