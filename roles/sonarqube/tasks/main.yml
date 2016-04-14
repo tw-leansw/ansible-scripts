@@ -1,2 +1,3 @@
 ---
-- include: docker.yml tags=docker,code-metrics
+- include: docker.yml
+  tags: [docker,code-metrics]

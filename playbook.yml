@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: uat-servers
   remote_user: root
   roles:
      - docker
@@ -14,3 +14,22 @@
      - cd-metrics
      - code-metrics
      - deliflow-webapp
+  tags:
+   - uat
+
+- hosts: prod-servers
+  remote_user: twer
+  sudo: yes
+  roles:
+     - docker
+     - mongodb
+     - mysql
+     - gocd-server
+     - gocd-agent
+     - eureka-server
+     - identity-server
+     - auth-server
+     - cd-metrics
+     - deliflow-webapp
+  tags:
+    - prod

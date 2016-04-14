@@ -1,3 +1,5 @@
 ---
-- include: single.yml tags=single
-- include: docker.yml tags=docker,gocd,identity,cd-metrics
+- include: single.yml
+  tags: [single]
+- include: docker.yml
+  tags: [docker,gocd,identity,cd-metrics]

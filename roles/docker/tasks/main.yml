@@ -1,10 +1,8 @@
 ---
-- script: yum-repo-docker.sh
-  tags:
-    - docker
-- yum: name=docker-engine state=latest
-  tags:
-    - docker
+- include: rhel.yml
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+- include: debian.yml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
 - name: Set docker daemon options
   copy:
@@ -37,15 +35,20 @@
 
 - name: Reload systemd immediately
   command: systemctl daemon-reload
-  when: docker_conf_updated_env1.changed or docker_conf_updated_env2.changed
+  when: (ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux') and (docker_conf_updated_env1.changed or docker_conf_updated_env2.changed)
   notify:
     - restart docker engine
   tags:
     - docker
-    
-- easy_install: name=pip
+
+- name: Reload systemd immediately
+  command: echo restart docker
+  when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and (docker_conf_updated_env1.changed or docker_conf_updated_env2.changed)
+  notify:
+    - restart docker engine
   tags:
     - docker
+
 - pip: name=docker-py version=1.1.0
   tags:
     - docker
