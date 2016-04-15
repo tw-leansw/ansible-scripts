@@ -1,5 +1,5 @@
 ---
-production_mode: 'yes'
+production_mode: 'false'
 gocd_server: 120.27.104.224
 sonarqube_server: 120.27.104.224
 # docker options
