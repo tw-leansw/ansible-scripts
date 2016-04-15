@@ -3,7 +3,7 @@
   docker:
     name: postgres
     image: postgres
-    hostname: postgres-server
+    hostname: postgres
     state: started
     env:
       POSTGRES_USER: sonar
@@ -13,7 +13,7 @@
   docker:
     name: sonarqube
     image: sonarqube:5.2
-    hostname: sonarqube-server
+    hostname: sonarqube
     state: started
     links:
       - "postgres:postgres"

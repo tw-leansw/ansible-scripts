@@ -2,11 +2,10 @@
 - name: start eureka-server
   docker:
     name: eureka-server
-    hostname: eureka-server
+    hostname: eureka
     image: registry:5000/leansw/discovery-service
-    state: reloaded
+    state: started
     insecure_registry: yes
-    memory_limit: 216MB
     ports:
       - "8761:8761"
   tags:

@@ -1,0 +1,18 @@
+---
+- hosts: all
+  pre_tasks:
+    - debug: var=production_mode
+      tags: docker
+  roles:
+     - docker
+     - mongodb
+     - mysql
+     - { role: sonarqube, when: production_mode == 'false' }
+     - { role: gocd-server, when: production_mode == 'false' }
+     - { role: gocd-agent, when: production_mode == 'false' }
+     - eureka-server
+     - identity-server
+     - auth-server
+     - cd-metrics
+    #  - code-metrics
+     - deliflow-webapp

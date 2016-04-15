@@ -2,7 +2,7 @@
 - name: start identity-server container
   docker:
     name: identity-server
-    hostname: identity-server
+    hostname: identity
     image: "{{ identity_docker_images }}"
     state: reloaded
     pull: always
@@ -14,6 +14,34 @@
       - "gocd-server:gocd-server"
     env:
       ACTIVE_PROFILE: "{{ active_profile }}"
+  when: production_mode == 'false'
   tags:
     - docker
     - identity
+
+- debug: var=production_mode
+
+- name: starts identity-server with production mode
+  docker:
+    name: identity-server
+    hostname: identity
+    image: "{{ identity_docker_images }}"
+    state: reloaded
+    pull: always
+    memory_limit: 216MB
+    insecure_registry: yes
+    links:
+      - "mysql:mysql-server"
+      - "eureka-server:eureka-server"
+    extra_hosts:
+      gocd-server: "{{gocd_server}}"
+    env:
+      ACTIVE_PROFILE: "{{ active_profile }}"
+  when: production_mode != 'false'
+  tags:
+    - docker
+    - identity
+
+- debug: var=production_mode
+  tags:
+    - docker

@@ -1,0 +1,6 @@
+---
+production_mode: 'yes'
+gocd_server: 120.27.104.224
+sonarqube_server: 120.27.104.224
+# docker options
+memory_limit: 216MB

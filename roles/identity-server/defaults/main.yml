@@ -1,5 +1,7 @@
 ---
+production_mode: 'false'
 identity_docker_images: registry:5000/leansw/identity-services:release
 active_profile: default
+gocd_server: 120.27.104.224
 # docker opts
 memory_limit: 216MB

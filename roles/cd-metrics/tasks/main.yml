@@ -1,7 +1,7 @@
 ---
 - docker:
     name: cd-metrics
-    hostname: cd-metrics-server
+    hostname: cd-metrics
     image: registry:5000/leansw/cd-metrics:release
     state: reloaded
     pull: always
@@ -15,6 +15,30 @@
       - "gocd-server:gocd-server"
     env:
       ACTIVE_PROFILE: default
+  tags:
+    - docker
+    - cd-metrics
+  when: production_mode == 'false'
+
+- name: starts cd-metrics-server with production mode
+  docker:
+    name: cd-metrics
+    hostname: cd-metrics
+    image: registry:5000/leansw/cd-metrics:release
+    state: reloaded
+    pull: always
+    insecure_registry: yes
+    memory_limit: 216MB
+    ports:
+      - "9001:9001"
+    links:
+      - "mongodb:mongo-server"
+      - "eureka-server:eureka-server"
+    extra_hosts:
+      gocd-server: "{{gocd_server}}"
+    env:
+      ACTIVE_PROFILE: default
+  when: production_mode != 'false'
   tags:
     - docker
     - cd-metrics

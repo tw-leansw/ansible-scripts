@@ -1,7 +1,7 @@
 ---
 - docker:
     name: deliflow-webapp
-    name: deliflow-webapp-server
+    hostname: deliflow-webapp
     image: registry:5000/leansw/deliflow-webapp:release
     state: reloaded
     pull: always

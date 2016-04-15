@@ -14,9 +14,9 @@
 - name: start gocd-server container
   docker:
     name: gocd-server
-    hostname: gocd-server
+    hostname: gocd
     image: gocd/gocd-server
-    state: reloaded
+    state: started
     insecure_registry: yes
     memory_limit: 216MB
     ports:
@@ -24,3 +24,7 @@
     volumes:
       - /data/var/go:/var/go
       - /data/etc/go:/etc/go
+  register: gocd_server_container
+
+- debug: var=gocd_server_container
+  when: gocd_server_container
