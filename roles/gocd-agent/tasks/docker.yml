@@ -2,9 +2,10 @@
 - name: start gocd-agent-container
   docker:
     name: gocd-agent
+    hostname: go-agent
     image: gocd/gocd-agent
     state: started
-    memory_limit: 512MB
+    memory_limit: 216MB
     links:
       - "gocd-server:gocd-server"
     env:

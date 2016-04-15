@@ -2,9 +2,10 @@
 - name: start auth-server container
   docker:
     name: auth-server
+    hostname: auth-server
     image: registry:5000/leansw/auth-server:release
     state: reloaded
-    memory_limit: 512MB
+    memory_limit: 216MB
     ports:
       - "8081:8080"
     links:

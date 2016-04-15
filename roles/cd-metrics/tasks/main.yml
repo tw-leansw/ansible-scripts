@@ -1,11 +1,12 @@
 ---
 - docker:
     name: cd-metrics
+    hostname: cd-metrics-server
     image: registry:5000/leansw/cd-metrics:release
     state: reloaded
     pull: always
     insecure_registry: yes
-    memory_limit: 512MB
+    memory_limit: 216MB
     ports:
       - "9001:9001"
     links:

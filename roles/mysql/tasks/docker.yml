@@ -3,7 +3,8 @@
     name: mysql
     image: mysql:5.5
     state: started
-    memory_limit: 512MB
+    hostname: mysql-server
+    memory_limit: 216MB
     env:
       MYSQL_DATABASE: deliflow-identity
       MYSQL_USER: deliflow

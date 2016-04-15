@@ -2,10 +2,11 @@
 - name: start identity-server container
   docker:
     name: identity-server
+    hostname: identity-server
     image: "{{ identity_docker_images }}"
     state: reloaded
     pull: always
-    memory_limit: 512MB
+    memory_limit: 216MB
     insecure_registry: yes
     links:
       - "mysql:mysql-server"

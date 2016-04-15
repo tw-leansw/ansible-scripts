@@ -1,3 +1,5 @@
 ---
 identity_docker_images: registry:5000/leansw/identity-services:release
 active_profile: default
+# docker opts
+memory_limit: 216MB

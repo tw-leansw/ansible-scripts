@@ -2,5 +2,6 @@
 - docker:
     name: mongodb
     image: mongo
+    hostname: mongo-server
     state: started
-    memory_limit: 512MB
+    memory_limit: 216MB

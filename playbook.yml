@@ -25,7 +25,6 @@
      - mongodb
      - mysql
      - gocd-server
-     - gocd-agent
      - eureka-server
      - identity-server
      - auth-server

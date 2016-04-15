@@ -14,10 +14,11 @@
 - name: start gocd-server container
   docker:
     name: gocd-server
+    hostname: gocd-server
     image: gocd/gocd-server
     state: reloaded
     insecure_registry: yes
-    memory_limit: 512MB
+    memory_limit: 216MB
     ports:
       - "8153:8153"
     volumes:

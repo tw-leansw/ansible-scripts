@@ -1,11 +1,12 @@
 ---
 - docker:
     name: code-metrics
+    hostname: code-metrics-server
     image: registry:5000/leansw/code-metrics:release
     state: reloaded
     pull: always
     insecure_registry: yes
-    memory_limit: 512MB
+    memory_limit: 216MB
     links:
       - "mongodb:mongo-server"
       - "eureka-server:eureka-server"
