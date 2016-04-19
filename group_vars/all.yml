@@ -1,6 +1,10 @@
 ---
 production_mode: 'false'
-gocd_server: 120.27.104.224
-sonarqube_server: 120.27.104.224
+gocd_server: gocd-server
+gocd_port: 8153
+gocd_root_path: /go
+gocd_username: admin
+gocd_password: badger
+sonarqube_server: sonarqube-server
 # docker options
 memory_limit: 216MB

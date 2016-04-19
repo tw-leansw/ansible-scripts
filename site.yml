@@ -2,7 +2,13 @@
 - hosts: all
   pre_tasks:
     - debug: var=production_mode
-      tags: docker
+      tags: debug
+    - debug: var=gocd_server
+      tags: debug
+    - debug: var=gocd_username
+      tags: debug
+    - debug: var=gocd_password
+      tags: debug
   roles:
      - docker
      - mongodb

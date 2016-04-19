@@ -15,6 +15,11 @@
       - "gocd-server:gocd-server"
     env:
       ACTIVE_PROFILE: default
+      GOCD_SERVER_HOST: gocd-server
+      GOCD_USERNAME: "{{ gocd_username }}"
+      GOCD_PASSWORD: "{{ gocd_password }}"
+      GOCD_SERVER_PORT: "{{ gocd_port }}"
+      GOCD_SERVER_ROOT: "{{ gocd_root_path }}"
   tags:
     - docker
     - cd-metrics
@@ -38,6 +43,11 @@
       gocd-server: "{{gocd_server}}"
     env:
       ACTIVE_PROFILE: default
+      GOCD_SERVER_HOST: gocd-server
+      GOCD_USERNAME: "{{ gocd_username }}"
+      GOCD_PASSWORD: "{{ gocd_password }}"
+      GOCD_SERVER_PORT: "{{ gocd_port }}"
+      GOCD_SERVER_ROOT: "{{ gocd_root_path }}"
   when: production_mode != 'false'
   tags:
     - docker
