@@ -4,7 +4,7 @@
     name: auth-server
     hostname: auth
     image: registry:5000/leansw/auth-server:release
-    state: reloaded
+    state: started
     memory_limit: 216MB
     ports:
       - "8081:8080"

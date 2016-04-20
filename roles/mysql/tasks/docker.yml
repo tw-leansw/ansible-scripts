@@ -5,6 +5,8 @@
     state: started
     hostname: mysql-server
     memory_limit: 216MB
+    ports:
+      - "3306:3306"
     env:
       MYSQL_DATABASE: deliflow-identity
       MYSQL_USER: deliflow

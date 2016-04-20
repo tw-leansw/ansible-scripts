@@ -18,7 +18,8 @@
      - { role: gocd-agent, when: production_mode == 'false' }
      - eureka-server
      - identity-server
-     - auth-server
+    #  - auth-server
      - cd-metrics
     #  - code-metrics
+    #
      - deliflow-webapp
