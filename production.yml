@@ -1,12 +1,14 @@
 ---
 - hosts: all
   remote_user: twer
+  vars:
+    production_mode: true
   roles:
      - docker
      - mongodb
      - eureka-server
-     - { role: identity-server, production_mode: 'true' }
+     - identity-server
     #  - auth-server
-     - { role: cd-metrics, production_mode: 'true' }
-     - { role: code-metrics, production_mode: 'true' }
+     - cd-metrics
+     - code-metrics
      - deliflow-webapp

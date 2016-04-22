@@ -20,7 +20,7 @@
       GOCD_PASSWORD: "{{ gocd_password }}"
       GOCD_SERVER_PORT: "{{ gocd_port }}"
       GOCD_SERVER_ROOT: "{{ gocd_root_path }}"
-  when: production_mode == 'false'
+  when: not production_mode
 
 - name: starts cd-metrics-server with production mode
   docker:
@@ -45,4 +45,4 @@
       GOCD_PASSWORD: "{{ gocd_password }}"
       GOCD_SERVER_PORT: "{{ gocd_port }}"
       GOCD_SERVER_ROOT: "{{ gocd_root_path }}"
-  when: production_mode != 'false'
+  when: production_mode
