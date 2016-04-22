@@ -6,6 +6,6 @@
     state: started
     memory_limit: 216MB
     volumes:
-      - /data/db:/data/db
+      - /data/deliflow/db:/data/db
     ports:
       - "27017:27017"

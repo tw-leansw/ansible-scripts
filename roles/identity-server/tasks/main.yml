@@ -8,6 +8,8 @@
     memory_limit: 216MB
     ports:
       - "3306:3306"
+    volumes:
+      - /data/deliflow/mysql:/var/lib/mysql
     env:
       MYSQL_DATABASE: deliflow-identity
       MYSQL_USER: deliflow
