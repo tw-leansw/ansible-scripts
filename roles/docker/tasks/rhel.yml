@@ -1,16 +1,6 @@
 ---
 - script: yum-repo-docker.sh
-  tags:
-    - docker
 
 - yum: name=docker-engine state=present
-  tags:
-    - docker
-
-
-
-
 
 - easy_install: name=pip
-  tags:
-    - docker

@@ -13,6 +13,3 @@
     insecure_registry: yes
     env:
       ACTIVE_PROFILE: default
-  tags:
-    - docker
-    - auth-server

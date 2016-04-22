@@ -12,8 +12,6 @@
     group: root
     mode: 0644
   when: docker_opts != ""
-  tags:
-    - docker
 
 - lineinfile:
     dest: /lib/systemd/system/docker.service
@@ -21,8 +19,6 @@
     line: "EnvironmentFile=-/etc/default/docker"
     state: present
   register: docker_conf_updated_env1
-  tags:
-    - docker
 
 - lineinfile:
     dest: /lib/systemd/system/docker.service
@@ -30,25 +26,17 @@
     line: "ExecStart=/usr/bin/docker daemon -H fd:// $DOCKER_OPTS"
     state: present
   register: docker_conf_updated_env2
-  tags:
-    - docker
 
 - name: Reload systemd immediately
   command: systemctl daemon-reload
   when: (ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux') and (docker_conf_updated_env1.changed or docker_conf_updated_env2.changed)
   notify:
     - restart docker engine
-  tags:
-    - docker
 
 - name: Reload systemd immediately
   command: echo restart docker
   when: (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu') and (docker_conf_updated_env1.changed or docker_conf_updated_env2.changed)
   notify:
     - restart docker engine
-  tags:
-    - docker
 
 - pip: name=docker-py version=1.1.0
-  tags:
-    - docker

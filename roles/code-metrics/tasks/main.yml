@@ -13,6 +13,3 @@
       - "sonarqube:sonar-server"
     env:
       ACTIVE_PROFILE: default
-  tags:
-    - docker
-    - code-metrics

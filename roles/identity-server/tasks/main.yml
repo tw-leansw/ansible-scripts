@@ -1,4 +1,19 @@
 ---
+- name: start mysql database instance for identity
+  docker:
+    name: mysql
+    image: mysql:5.5
+    state: started
+    hostname: mysql-server
+    memory_limit: 216MB
+    ports:
+      - "3306:3306"
+    env:
+      MYSQL_DATABASE: deliflow-identity
+      MYSQL_USER: deliflow
+      MYSQL_PASSWORD: deliflow
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+
 - name: start identity-server container
   docker:
     name: identity-server
@@ -20,11 +35,10 @@
       GOCD_SERVER_PORT: "{{ gocd_port }}"
       GOCD_SERVER_ROOT: "{{ gocd_root_path }}"
   when: production_mode == 'false'
-  tags:
-    - docker
-    - identity
 
 - debug: var=production_mode
+  tags:
+    - debug
 
 - name: starts identity-server with production mode
   docker:
@@ -48,10 +62,3 @@
       GOCD_SERVER_PORT: "{{ gocd_port }}"
       GOCD_SERVER_ROOT: "{{ gocd_root_path }}"
   when: production_mode != 'false'
-  tags:
-    - docker
-    - identity
-
-- debug: var=production_mode
-  tags:
-    - docker

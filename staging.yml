@@ -1,0 +1,15 @@
+---
+- hosts: all
+  remote_user: root
+  roles:
+     - docker
+     - gocd-server
+     - gocd-agent
+     - sonarqube
+     - mongodb
+     - eureka-server
+     - identity-server
+     - auth-server
+     - cd-metrics
+     - code-metrics
+     - deliflow-webapp
