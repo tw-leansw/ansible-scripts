@@ -4,7 +4,7 @@
     image: mongo
     hostname: mongo
     state: started
-    memory_limit: 216MB
+    memory_limit: 1024MB
     volumes:
       - /data/deliflow/db:/data/db
     ports:

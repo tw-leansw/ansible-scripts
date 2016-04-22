@@ -6,7 +6,7 @@
     state: reloaded
     pull: always
     insecure_registry: yes
-    memory_limit: 216MB
+    memory_limit: 1024MB
     ports:
       - "9001:9001"
     links:
@@ -30,7 +30,7 @@
     state: reloaded
     pull: always
     insecure_registry: yes
-    memory_limit: 216MB
+    memory_limit: 1024MB
     ports:
       - "9001:9001"
     links:
