@@ -11,6 +11,9 @@
 - name: upload gocd cruise-config.xml
   copy: src=cruise-config.xml dest=/data/etc/go/cruise-config.xml mode=777
 
+- name: wget deliflow notofy plugins
+  get_url: url=https://github.com/tw-leansw/leansw-plugins-status-notifier/releases/download/latested/lean-status-notifier-1.0-SNAPSHOT.jar dest=/data/var/lib/go-server/plugins/external/ mode=0777
+
 - name: start gocd-server container
   docker:
     name: gocd-server
@@ -23,6 +26,7 @@
     volumes:
       - /data/var/go:/var/go
       - /data/etc/go:/etc/go
+      - /data/var/lib/go-server/plugins/external:/var/lib/go-server/plugins/external
   register: gocd_server_container
 
 - debug: var=gocd_server_container
