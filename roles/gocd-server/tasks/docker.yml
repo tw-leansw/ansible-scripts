@@ -18,7 +18,6 @@
     image: gocd/gocd-server
     state: started
     insecure_registry: yes
-    memory_limit: 216MB
     ports:
       - "8153:8153"
     volumes:
