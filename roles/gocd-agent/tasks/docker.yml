@@ -3,7 +3,7 @@
   docker:
     name: gocd-agent
     hostname: go-agent
-    image: gocd/gocd-agent
+    image: twleansw/deliflow-standard-agent
     state: reloaded
     links:
       - "gocd-server:gocd-server"
