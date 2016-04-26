@@ -16,7 +16,7 @@
     name: gocd-server
     hostname: gocd
     image: gocd/gocd-server
-    state: started
+    state: reloaded
     insecure_registry: yes
     ports:
       - "8153:8153"
