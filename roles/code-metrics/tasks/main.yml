@@ -6,7 +6,6 @@
     state: reloaded
     pull: always
     insecure_registry: yes
-    memory_limit: 216MB
     links:
       - "mongodb:mongo-server"
       - "eureka-server:eureka-server"
