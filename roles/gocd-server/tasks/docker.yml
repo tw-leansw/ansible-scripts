@@ -6,7 +6,7 @@
   file: path=/data/etc/go state=directory mode=0777
 
 - name: create config volume mapping gocd plugins
-  file: path=/data/var/lib/go-server/plugins/external state=directory mode=0777
+  file: path=/data/var/lib/go-server/plugins/external state=directory mode=777
 
 - name: upload gocd password.properties
   copy: src=password.properties dest=/data/var/go/password.properties mode=777
@@ -54,9 +54,9 @@
     ports:
       - "8153:8153"
     volumes:
-      - /data/var/go:/var/go
-      - /data/etc/go:/etc/go
-      - /data/var/lib/go-server/plugins/external:/var/lib/go-server/plugins/external
+      - /data/var/go:/var/go:rw
+      - /data/etc/go:/etc/go:rw
+      - /data/var/lib/go-server/plugins:/var/lib/go-server/plugins:rw
   register: gocd_server_container
 
 - debug: var=gocd_server_container

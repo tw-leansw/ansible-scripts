@@ -8,7 +8,7 @@
   <pipelines group="DemoGroup">
     <pipeline name="jpetstore">
       <materials>
-        <git url="git@github.com:tw-leansw/jpetstore-6.git" />
+        <git url="https://github.com/tw-leansw/jpetstore-6.git" />
       </materials>
       <stage name="commit">
         <jobs>
@@ -25,7 +25,7 @@
     </pipeline>
     <pipeline name="deliflow-notify-plugin">
       <materials>
-        <git url="git@github.com:tw-leansw/leansw-plugins-status-notifier.git" />
+        <git url="https://github.com/tw-leansw/leansw-plugins-oauth-login.git" />
       </materials>
       <stage name="commit">
         <jobs>
@@ -41,4 +41,7 @@
       </stage>
     </pipeline>
   </pipelines>
+  <agents>
+    <agent hostname="go-agent" ipaddress="192.168.0.3" uuid="89448d13-4880-43a1-b13d-244d861d19dd" />
+  </agents>
 </cruise>

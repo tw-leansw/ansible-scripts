@@ -4,7 +4,7 @@
     name: gocd-agent
     hostname: go-agent
     image: gocd/gocd-agent
-    state: started
+    state: reloaded
     links:
       - "gocd-server:gocd-server"
     env:
