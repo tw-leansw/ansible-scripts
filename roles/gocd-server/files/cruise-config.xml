@@ -5,4 +5,40 @@
       <passwordFile path="/var/go/password.properties" />
     </security>
   </server>
+  <pipelines group="DemoGroup">
+    <pipeline name="jpetstore">
+      <materials>
+        <git url="git@github.com:tw-leansw/jpetstore-6.git" />
+      </materials>
+      <stage name="commit">
+        <jobs>
+          <job name="compile">
+            <tasks>
+              <exec command="mvn">
+                <arg>clean</arg>
+                <arg>package</arg>
+              </exec>
+            </tasks>
+          </job>
+        </jobs>
+      </stage>
+    </pipeline>
+    <pipeline name="deliflow-notify-plugin">
+      <materials>
+        <git url="git@github.com:tw-leansw/leansw-plugins-status-notifier.git" />
+      </materials>
+      <stage name="commit">
+        <jobs>
+          <job name="compile">
+            <tasks>
+              <exec command="mvn">
+                <arg>clean</arg>
+                <arg>package</arg>
+              </exec>
+            </tasks>
+          </job>
+        </jobs>
+      </stage>
+    </pipeline>
+  </pipelines>
 </cruise>

@@ -5,7 +5,6 @@
     hostname: go-agent
     image: gocd/gocd-agent
     state: started
-    memory_limit: 216MB
     links:
       - "gocd-server:gocd-server"
     env:
