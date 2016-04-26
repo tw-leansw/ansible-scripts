@@ -17,6 +17,9 @@
 - name: wget deliflow notofy plugins
   get_url: url=https://github.com/tw-leansw/leansw-plugins-status-notifier/releases/download/latested/lean-status-notifier-1.0-SNAPSHOT.jar dest=/data/var/lib/go-server/plugins/external/ mode=0777
 
+- name: wget deliflow oauth plugins
+  get_url: url=https://github.com/tw-leansw/leansw-plugins-oauth-login/releases/download/1.0/deliflow-oauth-login-1.0.jar dest=/data/var/lib/go-server/plugins/external/ mode=0777
+
 - name: start gocd-server container
   docker:
     name: gocd-server
