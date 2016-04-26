@@ -5,6 +5,9 @@
 - name: create config volume mapping gocd config file
   file: path=/data/etc/go state=directory mode=0777
 
+- name: create config volume mapping gocd plugins
+  file: path=/data/var/lib/go-server/plugins/external state=directory mode=0777
+
 - name: upload gocd password.properties
   copy: src=password.properties dest=/data/var/go/password.properties mode=777
 
