@@ -2,7 +2,7 @@
 - docker:
     name: cd-metrics
     hostname: cd-metrics
-    image: registry:5000/leansw/cd-metrics:release
+    image: registry.aliyuncs.com/leansw/cd-metrics:release
     state: reloaded
     pull: always
     insecure_registry: yes
@@ -25,7 +25,7 @@
   docker:
     name: cd-metrics
     hostname: cd-metrics
-    image: registry:5000/leansw/cd-metrics:release
+    image: registry.aliyuncs.com/leansw/cd-metrics:release
     state: reloaded
     pull: always
     insecure_registry: yes

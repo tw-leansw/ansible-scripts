@@ -2,7 +2,7 @@
 - docker:
     name: deliflow-webapp
     hostname: deliflow-webapp
-    image: registry:5000/leansw/deliflow-webapp:release
+    image: registry.aliyuncs.com/leansw/deliflow-webapp:release
     state: reloaded
     pull: always
     insecure_registry: yes

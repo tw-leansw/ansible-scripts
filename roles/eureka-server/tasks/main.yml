@@ -3,7 +3,7 @@
   docker:
     name: eureka-server
     hostname: eureka
-    image: registry:5000/leansw/discovery-service
+    image: registry.aliyuncs.com/leansw/discovery-service
     state: started
     insecure_registry: yes
     ports:

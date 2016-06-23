@@ -1,6 +1,6 @@
 ---
 production_mode: 'false'
-identity_docker_images: registry:5000/leansw/identity-services:release
+identity_docker_images: registry.aliyuncs.com/leansw/identity-services:release
 active_profile: default
 gocd_server: 120.27.104.224
 # docker opts
