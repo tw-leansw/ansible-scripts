@@ -1,1 +1,1 @@
-docker_opts: ""
+docker_opts: "--insecure-registry registry:5000"
