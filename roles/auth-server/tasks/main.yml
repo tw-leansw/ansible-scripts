@@ -3,7 +3,7 @@
   docker:
     name: auth-server
     hostname: auth
-    image: registry.aliyuncs.com/leansw/auth-server:release
+    image: "registry.aliyuncs.com/leansw/auth-server:release"
     state: started
     ports:
       - "8081:8080"

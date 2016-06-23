@@ -1,1 +1,1 @@
-identity_docker_images: registry.aliyuncs.com/leansw/identity-services:release
+identity_docker_images: "registry.aliyuncs.com/leansw/identity-services:release"
