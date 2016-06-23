@@ -13,4 +13,4 @@
   copy: src=docker.list dest=/etc/apt/sources.list.d/docker.list
 
 - name: Install docker requirement python package
-  pip: name=docker-py version=1.1.0
+  pip: name=docker-py version=1.7.0

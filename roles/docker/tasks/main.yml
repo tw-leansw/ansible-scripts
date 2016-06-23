@@ -44,5 +44,5 @@
     username: afyao@thoughtworks.com
     email: afyao@thoughtworks.com
     password: Leanswdev1
-    reauthorize: yes
-- pip: name=docker-py version=1.1.0
+    reauthorize: yes  
+- pip: name=docker-py version=1.7.0
